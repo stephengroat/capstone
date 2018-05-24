@@ -53,6 +53,8 @@ function build_android {
 
     TOOLCHAIN="$NDK/toolchains/$CROSS$GCCVER/prebuilt/$HOSTOS-$HOSTARCH"
     PLATFORM="$NDK/platforms/$APILEVEL/arch-$TARGARCH"
+    echo $TOOLCHAIN
+    echo $PLATFORM
 
     CROSS="$TOOLCHAIN/bin/$CROSS" CFLAGS="--sysroot=$PLATFORM" LDFLAGS="--sysroot=$PLATFORM" ${MAKE} $*
 }
