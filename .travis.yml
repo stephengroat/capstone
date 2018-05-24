@@ -24,3 +24,9 @@ matrix:
       os: osx
       script: brew update && brew install --HEAD capstone && brew test capstone
       compiler: clang
+    - os: osx
+      install: brew cask install android-ndk && export NDK=/usr/local/share/android-ndk
+      script: ./make.sh cross-android arm64
+    - os: osx
+      install: brew cask install android-ndk && export NDK=/usr/local/share/android-ndk
+      script: ./make.sh cross-android arm
